@@ -9,7 +9,6 @@ public class InfoHideCircle {
         //c.rad = -3.3; //접근이 되지 않는다.(읽기/쓰기 불가능)
         c.setRad(-3.3);
         System.out.println("원의 넓이(2): " + c.getArea());
-
         System.out.println(c.PI);
     }
 
