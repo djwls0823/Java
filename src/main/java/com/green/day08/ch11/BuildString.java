@@ -26,10 +26,10 @@ public class BuildString {
         System.out.println("str: " + str);
 
         StringBuilder sb2 = sb.reverse().replace(0, 2, "KK"); //체이닝 기법, return this;가 핵심이다.
-        sb.reverse();
-        sb.replace(0, 2, "KK");
+        //sb.reverse();
+        //sb.replace(0, 2, "KK");
 
-        System.out.println("sb: " + sb);
+        System.out.println("sb2: " + sb2);
         System.out.println("sb == sb2: " + (sb == sb2));
     }
 }
