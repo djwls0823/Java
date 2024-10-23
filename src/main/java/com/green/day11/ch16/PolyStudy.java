@@ -17,6 +17,8 @@ public class PolyStudy {
         Cat cat = new Cat();
         cat.crying(); //고양이가 운다~
 
+        //Cat cat2 = new Dog(); //형제관계도 형변환 안된다.
+
         System.out.println("------------");
         //1번 검증
         Animal ani1 = new Cat();
@@ -66,8 +68,25 @@ public class PolyStudy {
         System.out.println(ani3 instanceof Dog); //true
         System.out.println(ani4 instanceof BullDog); //false
         System.out.println(ani4 instanceof Bird); //true
+        System.out.println("------------");
+        Cat cat2 = new Cat();
+        Dog dog2 = new Dog();
+        BullDog bullDog = new BullDog();
+        Bird bird = new Bird();
+
+        animalCrying(cat2);
+        animalCrying(dog2);
+        animalCrying(bullDog);
+        animalCrying(bird);
 
         System.out.println("-- 끝 --");
+    }
+
+    static void animalCrying(Animal animal) {
+        animal.crying();
+        if (animal instanceof BullDog) {
+            ((BullDog) animal).jump();
+        }
     }
 }
 

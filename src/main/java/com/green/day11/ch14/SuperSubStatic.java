@@ -11,7 +11,6 @@ public class SuperSubStatic {
 
 class SuperCLS {
     protected static int count;
-
     SuperCLS() {
         count++;
     }
