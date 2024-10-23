@@ -19,9 +19,7 @@ public class CardDeck {
             }
         }
 
-        for (Card item : cards) {
-            System.out.println(item);
-        }
+        shuffle();
     }
 
     private void shuffle() {
@@ -35,6 +33,9 @@ public class CardDeck {
 
     //주소값 하나씩 리턴, 리턴 주소값 지워야되고, selectedIdx 이용하여 해결
     public Card draw() {
+        if (selectedIdx == (cards.length)-1) {
+            return null;
+        }
         Card c = cards[selectedIdx];
         cards[selectedIdx] = null;
         selectedIdx++;
@@ -42,13 +43,14 @@ public class CardDeck {
     }
 
     public void checkCard() {
-        for (Card item : cards) {
-            System.out.println(item);
+        for (Card c : cards) {
+            System.out.println(c);
         }
     }
 
     public String getDenomination(int n) {
         if (n < 1 || n > 13) {
+            return "";
         }
         switch(n) {
             case 1: return "A";

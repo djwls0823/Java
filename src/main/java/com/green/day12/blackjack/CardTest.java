@@ -6,6 +6,15 @@ public class CardTest {
 
         Card c = cd.draw();
         Card c2 = cd.draw();
+        System.out.println();
         cd.checkCard();
+
+        while (true) {
+            Card draw = cd.draw();
+            if (draw == null) {
+                break;
+            }
+            System.out.println(cd.draw());
+        }
     }
 }
