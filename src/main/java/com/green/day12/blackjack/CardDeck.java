@@ -33,16 +33,16 @@ public class CardDeck {
 
     //주소값 하나씩 리턴, 리턴 주소값 지워야되고, selectedIdx 이용하여 해결
     public Card draw() {
-        if (selectedIdx == (cards.length)-1) {
+        if (selectedIdx == 52) {
             return null;
         }
-        Card c = cards[selectedIdx];
+        Card tmp = cards[selectedIdx];
         cards[selectedIdx] = null;
         selectedIdx++;
-        return c;
+        return tmp;
     }
 
-    public void checkCard() {
+    public void checkCards() {
         for (Card c : cards) {
             System.out.println(c);
         }
