@@ -4,7 +4,7 @@ public class MyArrayList {
     private int[] arr;
 
     public MyArrayList() {
-        arr = new int[0];
+        clear();
     }
     @Override
     public String toString() {
@@ -23,7 +23,28 @@ public class MyArrayList {
 
     public void add(int num) {
         int[] tmp = new int[arr.length + 1];
-
+        for (int i = 0; i < arr.length; i++) {
+            tmp[i] = arr[i];
+        }
+        tmp[arr.length] = num;
         arr = tmp;
+    }
+
+    public int size() {
+        return arr.length;
+    }
+
+    public void clear() {
+        arr = new int[0];
+    }
+
+    public int remove() {
+        int[] tmp = new int[arr.length -1];
+        for (int i = 0; i < tmp.length ; i++) {
+            tmp[i] = arr[i];
+        }
+        int removeVal = arr[tmp.length];
+        arr = tmp;
+        return removeVal;
     }
 }
