@@ -25,6 +25,7 @@ class CardTest2 {
         gamer.receiveCard(cd.draw());
         gamer.receiveCard(cd.draw());
         gamer.showYourCards();
+        System.out.println(gamer.getPoint());
 
         List<Card> list = gamer.openCards();
     }
@@ -38,5 +39,13 @@ class CardTest3 {
         dealer.receiveCard(cd.draw());
         dealer.receiveCard(cd.draw());
         dealer.showYourCards();
+        System.out.println(dealer.getPoint());
+    }
+}
+
+class CardTest4 {
+    public static void main(String[] args) {
+        Rule rule = new Rule();
+        rule.getWinner(null, null);
     }
 }
