@@ -25,7 +25,7 @@ public class Rule {
          */
         if (dp == gp || (dp > 21 && gp > 21)) {
             System.out.println("비겼다");
-        } else if ((dp > gp && dp <22) || gp >21) {
+        } else if ((dp > gp && dp <= 21) || gp >21) {
             System.out.println("딜러가 이겼다.");
         } else {
             System.out.println("게이머가 이겼다.");
