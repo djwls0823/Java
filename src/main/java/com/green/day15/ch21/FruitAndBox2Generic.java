@@ -2,10 +2,10 @@ package com.green.day15.ch21;
 
 public class FruitAndBox2Generic {
     public static void main(String[] args) {
-        BoxGeneric<Apple> appleBox = new BoxGeneric(new Apple());
+        BoxGeneric<Apple> appleBox = new BoxGeneric<>(new Apple());
         Apple apple = appleBox.getBox();
 
-        BoxGeneric<Orange> orangeBox = new BoxGeneric(new Orange());
+        BoxGeneric<Orange> orangeBox = new BoxGeneric<>(new Orange());
         Orange orange = orangeBox.getBox();
 
         //new 부분에 <>를 생략하면 객체는 타입이 제네릭의 타입은 Object가 되는 것 같음.
