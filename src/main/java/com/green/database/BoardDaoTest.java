@@ -1,10 +1,40 @@
 package com.green.database;
 
+import java.util.List;
+
 public class BoardDaoTest {
     public static void main(String[] args) {
         BoardDao dao = new BoardDao();
-        //insert(dao);
-        delete(dao);
+        Board board = null;
+        if(args.length > 0) {
+            board = new Board();
+            board.setTitle(args[0]);
+            board.setContents(args[1]);
+            board.setWriter(args[2]);
+
+            if(args.length ==4 ) {
+                board.setBoardId( Integer.parseInt(args[3]) );
+            }
+        }
+        //insert(dao, board);
+        //selectAll(dao);
+        selectOne(dao, 3);
+        //update(dao, board);
+        //delete(dao);
+    }
+
+    private static void selectOne(BoardDao dao, int boardId) {
+        Board board = dao.selBoardOne(boardId);
+        System.out.println(board);
+    }
+    private static void update(BoardDao dao, Board board) {
+        int result = dao.updBoard(board);
+        System.out.println("result: " + result);
+    }
+
+    private static void insert(BoardDao dao, Board board) {
+        int result = dao.insBoard(board);
+        System.out.println("result: " + result);
     }
 
     private static void delete(BoardDao dao) {
@@ -12,13 +42,16 @@ public class BoardDaoTest {
         System.out.println("result: " + result);
     }
 
-    private static void insert(BoardDao dao) {
-        Board board = new Board();
-        board.setTitle("올해 연말 가요제 내가 볼 무대는 거의 없네");
-        board.setContents("유튜브든 뭐든 해서 찾아봤는데 올해는 먼가 아쉽네");
-        board.setWriter("MS07B");
+    private static void selectAll(BoardDao dao) {
+        List<Board> list = dao.selBoardList();
+        for(Board b: list) {
+            System.out.println(b);
+        }
+        //System.out.println(list);
+    }
 
-        int result = dao.insBoard(board);
+    private static void updBoardDynamic(BoardDao dao, Board board) {
+        int result = dao.updBoard(board);
         System.out.println("result: " + result);
     }
 }
